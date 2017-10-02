@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
 
+  videos = [ 'Super Cool Video', 'Rad Video', 'Even better video' ];
+
   constructor() { }
 
   ngOnInit() {
