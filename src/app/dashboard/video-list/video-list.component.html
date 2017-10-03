@@ -2,7 +2,7 @@
   <div class="card-content">
     <div class="card-title">Top 5 Preview</div>
     <div class="collection">
-      <a class="collection-item" *ngFor="let video of videos" [class.active]="isSelected(video)" (click)="selectVideo(video)">
+      <a class="collection-item" *ngFor="let video of videos" [class.active]="video.selected" (click)="selectVideo(video)">
         <div class="card horizontal">
           <div class="card-image">
             <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt="thumbnail" />

@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
 
-  videos = myVideos;
-  selectedVideo: any;
+  videos: Video[] = myVideos;
+  // selectedVideo: any;
 
   constructor() { }
 
@@ -16,15 +16,39 @@ export class VideoListComponent implements OnInit {
   }
 
   selectVideo(video) {
-    this.selectedVideo = video;
+    // this.selectedVideo = video;
     console.log('got video', video);
+
+    for (let i = 0; i < this.videos.length; i++) {
+      this.videos[i].selected = false;
+    }
+
+    video.selected = true;
   }
 
-  isSelected(video) {
+  /*isSelected(video) {
     if (this.selectedVideo === video) {
       return 'active';
     }
-  }
+  }*/
+}
+
+/*class Video implements Video {
+  selected?: boolean;
+}*/
+
+interface Video {
+  selected?: boolean;
+  title: string;
+  author: string;
+  id: string;
+  viewDetails: VideoViewDetails[];
+}
+
+interface VideoViewDetails {
+  age: number;
+  region: string;
+  date: string;
 }
 
 const myVideos = [
