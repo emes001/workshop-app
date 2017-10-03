@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col s3">
-      <app-video-list></app-video-list>      
+      <app-video-list (setCurrentVideo)="setVideo($event)"></app-video-list>      
   </div>
   <div class="col s6">
-      <app-video-player></app-video-player>
-      <app-stat-filters></app-stat-filters>
+      <app-video-player [video]="currentVideo"></app-video-player>
+      <app-stat-filters [video]="currentVideo"></app-stat-filters>
   </div>
 </div>

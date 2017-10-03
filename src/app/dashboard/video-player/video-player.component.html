@@ -1,6 +1,9 @@
 <div class="card">
-  <div class="card-content">
-    <div class="card-title">Video Placeholder Title</div>
+  <div *ngIf="video" class="card-content">
+    <div class="card-title">{{video.title}}</div>
     <div class="video-container">Video Placeholder</div>
   </div>
+  <div *ngIf="!video" class="card-content">
+      <div class="card-title">Select a video</div>
+    </div>
 </div>
