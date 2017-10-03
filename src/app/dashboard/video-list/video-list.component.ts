@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Video } from '../../common/data-types';
 import { myVideos } from '../../video-data';
-import { HttpClient } from '@angular/common/http';
+import { VideoDataService } from '../../video-data.service';
 
 @Component({
   selector: 'app-video-list',
@@ -14,8 +14,8 @@ export class VideoListComponent implements OnInit {
 
   videos: Video[];
 
-  constructor(http: HttpClient) {
-    http.get<Video[]>('http://localhost:8085/videos').subscribe(videoData => this.videos = videoData);
+  constructor(videoProvider: VideoDataService) {
+    videoProvider.loadVideos().subscribe(videoData => this.videos = videoData);
   }
 
   ngOnInit() {

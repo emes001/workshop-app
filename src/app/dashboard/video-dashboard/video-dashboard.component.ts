@@ -10,7 +10,7 @@ export class VideoDashboardComponent implements OnInit {
 
   currentVideo: Video;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

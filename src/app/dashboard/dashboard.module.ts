@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { VideoDashboardComponent } from './video-dashboard/video-dashboard.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
@@ -16,8 +15,7 @@ const dashboardRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(dashboardRoutes),
-    HttpClientModule
+    RouterModule.forChild(dashboardRoutes)
   ],
   exports: [RouterModule],
   declarations: [VideoDashboardComponent, VideoListComponent, VideoPlayerComponent, StatFiltersComponent, VideoListItemComponent]
