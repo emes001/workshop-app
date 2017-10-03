@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Video } from '../../common/data-types';
 import { myVideos } from '../../video-data';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-video-list',
@@ -11,16 +12,16 @@ export class VideoListComponent implements OnInit {
 
   @Output() setCurrentVideo = new EventEmitter<Video>();
 
-  videos: Video[] = myVideos;
+  videos: Video[];
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    http.get<Video[]>('http://localhost:8085/videos').subscribe(videoData => this.videos = videoData);
+  }
 
   ngOnInit() {
   }
 
   selectVideo(video) {
-
-    console.log('got video', video);
 
     for (let i = 0; i < this.videos.length; i++) {
       this.videos[i].selected = false;
