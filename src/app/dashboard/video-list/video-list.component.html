@@ -3,17 +3,7 @@
     <div class="card-title">Top 5 Preview</div>
     <div class="collection">
       <a class="collection-item" *ngFor="let video of videos" [class.active]="video.selected" (click)="selectVideo(video)">
-        <div class="card horizontal">
-          <div class="card-image">
-            <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt="thumbnail" />
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p>{{video.title}}</p>
-              <p>{{video.author}}</p>
-            </div>
-          </div>
-        </div>
+        <app-video-list-item [video]="video"></app-video-list-item>
       </a>
     </div>
   </div>
