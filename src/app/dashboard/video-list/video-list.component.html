@@ -2,7 +2,19 @@
   <div class="card-content">
     <div class="card-title">Top 5 Preview</div>
     <div class="collection">
-      <div class="colletion-item" *ngFor="let video of videos">{{video}}</div>
+      <a class="collection-item" *ngFor="let video of videos" [class.active]="isSelected(video)" (click)="selectVideo(video)">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://img.youtube.com/vi/{{video.id}}/0.jpg" alt="thumbnail" />
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>{{video.title}}</p>
+              <p>{{video.author}}</p>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>

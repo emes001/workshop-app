@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.collection-item.active {
+    color: #26a69a !important;
+}
