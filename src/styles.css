@@ -2,3 +2,7 @@
 .collection-item.active {
     color: #26a69a !important;
 }
+
+.collection-item.inactive {
+    color: red;
+}

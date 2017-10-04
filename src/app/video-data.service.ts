@@ -12,7 +12,7 @@ export class VideoDataService {
   constructor(private http: HttpClient) { }
 
   loadVideos(): Observable<Video[]> {
-    return this.http.get<Video[]>(API_URL).map(x => x.splice(0, 2));
+    return this.http.get<Video[]>(API_URL);
   }
 
 }
